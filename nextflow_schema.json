@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/./master/nextflow_schema.json",
+    "title": ". pipeline parameters",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "index": {
+            "type": "string",
+            "description": "File of sample files",
+            "format": "file-path"
+        },
+        "help": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "index"
+    ]
+}
