@@ -1,20 +1,29 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://raw.githubusercontent.com/./master/nextflow_schema.json",
-    "title": ". pipeline parameters",
-    "description": "",
-    "type": "object",
-    "properties": {
-        "index": {
-            "type": "string",
-            "description": "File of sample files",
-            "format": "file-path"
-        },
-        "help": {
-            "type": "string"
-        }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/./master/nextflow_schema.json",
+  "title": ". pipeline parameters",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "index": {
+      "type": "string",
+      "description": "File of sample files",
+      "format": "file-path"
     },
-    "required": [
-        "index"
-    ]
+    "help": {
+      "type": "string",
+      "description": "Prints help message"
+    },
+    "output_dir": {
+      "type": "string",
+      "default": ".default_hidden",
+      "description": "Output directory"
+    },
+    "pipeline_info": {
+      "type": "string",
+      "default": ".default_hidden/pipeline_info",
+      "description": "Location of pipeline info (trace, report)"
+    }
+  },
+  "required": ["index"]
 }
