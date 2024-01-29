@@ -137,9 +137,10 @@ You can then see the image online, in this example, mine is at: [https://hub.doc
 Now anyone can pull the image using 
 
 ```
-docker push happykhan/ezclermont:latest
+docker pull happykhan/ezclermont:latest
 ```
 
+# Using containers in nextflow 
 If you want nextflow to use this container you can add something like below to your `nextflow.config`:
 
 ```
