@@ -6,20 +6,6 @@ This is a Nextflow pipeline for phylotyping *E. coli*, and for testing different
 
 There are currently six recognized phylogroups, labeled A, B1, B2, C, D, and E. Each phylogroup represents a distinct lineage of *E. coli* strains that share common genetic characteristics. These characteristics are determined by analyzing specific genetic markers or genes present in the bacterial genome.
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Inputs](#inputs)
-- [Outputs](#outputs)
-- [Dependencies](#dependencies)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Overview
-
-[Provide a brief overview of the pipeline, its purpose, and its main features.]
 
 ## Installation
 
