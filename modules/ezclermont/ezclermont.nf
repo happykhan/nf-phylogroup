@@ -1,25 +1,23 @@
 
-process EZCLEMONT {
+process EZCLERMONT {
     debug true
     time '1h'
-    publishDir 'ezclemont'
-
+    publishDir "${params.output_dir}/ezclermont"
 
     input:
     tuple val(sample), file(fasta)
 
     script:
     """
-    echo $fasta
-    ezclemont $fasta > $sample.ezclemont.txt
+    ezclermont $fasta --logfile ${sample}.ezclermont.log > ${sample}.ezclermont.txt || true
     """
     output:
-        path("$sample.ezclemont.txt")
-
+        path("${sample}.ezclermont.txt")
+        path("${sample}.ezclermont.log")
     stub:
         """
-        mkdir $sample
-        touch $sample/stub.txt
+        touch ${sample}.ezclermont.txt
+        touch ${sample}.ezclermont.log
         """
 
 }

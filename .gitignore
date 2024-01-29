@@ -1,9 +1,11 @@
+.nextflow* 
+work/ 
+.default_hidden/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-.nextflow* 
-work/ 
 # C extensions
 *.so
 

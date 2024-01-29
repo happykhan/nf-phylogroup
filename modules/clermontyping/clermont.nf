@@ -1,7 +1,7 @@
 process CLEMONTTYPING {
     debug true
     time '1h'
-    publishDir 'clemonttyping'
+    publishDir "${params.output_dir}/clemonttyping"
 
 
     input:
@@ -9,7 +9,6 @@ process CLEMONTTYPING {
 
     script:
     """
-    echo $fasta
     clermonTyping.sh --fasta $fasta --name $sample
     """
     output:
@@ -18,7 +17,7 @@ process CLEMONTTYPING {
     stub:
         """
         mkdir $sample
-        touch $sample/stub.txt
+        touch $sample/${sample}-stub.txt
         """
 
 }
