@@ -16,4 +16,4 @@ module load Nextflow/23.04.2
 cd ~/nf-phylotyping
 
 # Run Nextflow
-nextflow run main.nf 
+nextflow run main.nf -profile bmrc
