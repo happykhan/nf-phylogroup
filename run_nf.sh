@@ -5,15 +5,12 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=4G
-#SBATCH --time=1:00:00
+#SBATCH --time=2:00:00
 #SBATCH --output=nextflow.out
 #SBATCH --error=nextflow.err
-
-# Load required modules
-module load Nextflow/23.04.2
 
 # Set the working directory
 cd ~/nf-phylotyping
 
 # Run Nextflow
-nextflow run main.nf 
+./nextflow run main.nf -profile bmrc
