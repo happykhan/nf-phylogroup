@@ -9,10 +9,12 @@ def build_singularity_containers(config_file_path, image_dir):
 
     with open(config_file_path, 'r') as config_file:
         for line in config_file:
-            if re.search(r"container = '(\w+\/e\w+:\w+)'", line):
-                container_mentions.append(line.strip())
+            matches = re.search(r"container = '(\w+\/\w+:\w+)'", line)
+            if matches:
+                container_mentions.append(matches.group(1))
 
     for mention in container_mentions:
+        print(command)
         command = f'singularity pull {image_dir} docker://{mention}'
         subprocess.run(command, shell=True)
 
