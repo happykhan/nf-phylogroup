@@ -18,8 +18,8 @@ def build_singularity_containers(config_file_path, image_dir):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Build Singularity containers from config file')
-    parser.add_argument('config_file', type=str, help='Path to the config file', default='nextflow.config')
-    parser.add_argument('image_dir', type=str, help='Path to the directory to store the Singularity images', default='/well/aanensen/shared/singularity/')
+    parser.add_argument('-c', '--config_file', type=str, help='Path to the config file', default='nextflow.config')
+    parser.add_argument('-i', '--image_dir', type=str, help='Path to the directory to store the Singularity images', default='/well/aanensen/shared/singularity/')
 
     args = parser.parse_args()
 
