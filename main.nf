@@ -1,7 +1,7 @@
 #!/usr/bin/env nextflow
 
 // Importing required functions from 'plugin/nf-validation'
-include { validateParameters; paramsHelp; paramsSummaryLog; } from 'plugin/nf-validation@1.1.3'
+include { validateParameters; paramsHelp; paramsSummaryLog; } from 'plugin/nf-validation'
 
 include { CLEMONTTYPING } from './modules/clermontyping/clermont'
 
