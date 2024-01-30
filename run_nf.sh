@@ -5,7 +5,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=4G
-#SBATCH --time=2:00:00
+#SBATCH --time=8:00:00
 #SBATCH --output=nextflow.out
 #SBATCH --error=nextflow.err
 
