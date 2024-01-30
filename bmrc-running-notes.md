@@ -7,6 +7,7 @@ Installing nextflow plugins (on the head node)
 nextflow plugin install nf-validation
 ```
 
+
 To get an interactive shell:
 
 ```
