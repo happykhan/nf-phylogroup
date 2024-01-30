@@ -1,7 +1,7 @@
 #!/usr/bin/env nextflow
 
 // Importing required functions from 'plugin/nf-validation'
-include { validateParameters; paramsHelp; paramsSummaryLog; } from 'plugin/nf-validation'
+include { validateParameters; paramsHelp; paramsSummaryLog; } from 'plugin/nf-validation@1.1.3'
 
 include { CLEMONTTYPING } from './modules/clermontyping/clermont'
 
@@ -36,6 +36,6 @@ workflow {
         | map { row-> tuple(row.sample, file(row.fasta)) } 
 
     // Running the CLEMONTTYPING1 module
-   // CLEMONTTYPING( FASTA )
+    CLEMONTTYPING( FASTA )
     EZCLERMONT( FASTA )
 }
