@@ -5,7 +5,7 @@ import argparse
 
 def build_singularity_containers(config_file_path, image_dir, pipeline_name):
     sing_dir = os.path.join(image_dir, pipeline_name)
-    os.makedirs(sing_dir, exist_ok=True)
+    # os.makedirs(sing_dir, exist_ok=True)
     container_mentions = []
 
     with open(config_file_path, 'r') as config_file:
@@ -15,7 +15,9 @@ def build_singularity_containers(config_file_path, image_dir, pipeline_name):
                 container_mentions.append(matches.group(1))
 
     for mention in container_mentions:
-        command = f'singularity pull {sing_dir} docker://{mention}'
+        image_name = mention.split('/')[-1].replace(':', '_')
+        image_file = os.path.join(sing_dir, image_name)
+        command = f'singularity pull {image_file} docker://{mention}'
         print(command)
         subprocess.run(command, shell=True)
 
