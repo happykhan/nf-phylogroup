@@ -17,9 +17,11 @@ def build_singularity_containers(config_file_path, image_dir, pipeline_name):
     for mention in container_mentions:
         image_name = mention.split('/')[-1].replace(':', '_')
         image_file = os.path.join(sing_dir, image_name)
-        command = f'singularity pull {image_file} docker://{mention}'
+        command = f'singularity pull {image_file}.sif docker://{mention}'
         print(command)
         subprocess.run(command, shell=True)
+        print('Please update nextflow.config with the following line:')
+        print(f"container = '{image_file}.sif'")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Build Singularity containers from config file')
