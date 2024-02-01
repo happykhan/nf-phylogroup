@@ -11,6 +11,6 @@
 
 # Set the working directory
 cd ~/nf-phylotyping
-
+module load Java/17.0.4
 # Run Nextflow
-./nextflow run main.nf -profile bmrc
+./nextflow run main.nf -profile bmrc --output_dir test_data
