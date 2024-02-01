@@ -10,7 +10,7 @@ RUN apt update && apt upgrade -y
 # Install required packages
 RUN apt install -y less vim tree python3 python3-pip zip git python3-biopython r-base r-base-dev pandoc
 # Install R packages
-RUN printf 'install.packages(c("readr", "dplyr", "tidyr", "stringr", "knitr", "markdown", "pandoc"), repos="http://cran.us.r-project.org")' | Rscript --vanilla /dev/stdin
+RUN printf 'install.packages(c("readr", "dplyr", "tidyr", "stringr", "knitr", "rmarkdown", "markdown", "pandoc"), repos="http://cran.us.r-project.org")' | Rscript --vanilla /dev/stdin
 # Clone ClermonTyping repository
 
 RUN apt install -y procps less vim tree python3 python3-pip zip git python3-biopython
